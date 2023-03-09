@@ -1,6 +1,6 @@
-# Nebula Docker Container Setup Guide
+# T-Hyp SDK Docker Container Setup Guide
 
-## 1. Install Docker
+## Install Docker
 
 **For Ubuntu Linux:**
 https://docs.docker.com/compose/install/
@@ -8,25 +8,28 @@ https://docs.docker.com/compose/install/
 **For Mac OS:**
 https://docs.docker.com/docker-for-mac/install/
 
-## 2. Create and start a new container
+## Method1: Create docker image and start a new container
 
 ```
 ### Change username, password and timezone
 $ vi .env
 
 ### Creating new container
-$ docker-compose up -d nebula_dev
-$ docker-compose ps
-     Name              Command        State          Ports
-------------------------------------------------------------------
-nebula_nebula_1   /usr/sbin/sshd -D   Up      0.0.0.0:8022->22/tcp
-
+$ docker-compose up -d
 ```
 
-## 3. Login container via SSH
+## Method2: Import prebuilt docker image and start a new container
 
 ```
-$ ./login.sh
-Last login: Tue Nov 17 04:44:57 2020 from 172.21.0.1
-nebula@nebula-docker:~$
+### Load prebuilt docker image to system
+$ docker load -i thyp-docker-focal-0.1.tar.gz
+
+### Creating new container
+$ docker-compose up -d
+```
+
+## Login container via SSH
+
+```
+$ ./thyp-shell.sh
 ```

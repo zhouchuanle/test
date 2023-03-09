@@ -1,20 +1,19 @@
 version: '3'
 services:
-  nebula_dev:
+  thyp-sdk:
     build:
       context: ./build
       args:
         username: ${USERNAME}
         password: ${PASSWORD}
         timezone: ${TIMEZONE}
-    image: goldenriver/nebula_dev
+    image: goldenriver/thyp-sdk:${IMAGE_VERSION}
     volumes:
       - "./user_home:/home/${USERNAME}"
     ports:
       - "8022:22"
     networks:
       - developer
-    hostname: nebula-docker
     privileged: true 
 
 networks:
