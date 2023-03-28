@@ -4,17 +4,18 @@ services:
     build:
       context: ./build
       args:
-        username: ${USERNAME}
-        password: ${PASSWORD}
-        timezone: ${TIMEZONE}
-    image: goldenriver/thyp-sdk:${IMAGE_VERSION}
+        username: ${MY_NAME}
+        password: ${MY_PWD}
+        timezone: ${MY_TIMEZONE}
+    image: goldenriver/thyp-sdk:${MY_IMAGE_VERSION}
     volumes:
-      - "./user_home:/home/${USERNAME}"
+      - "./user_home:/home/${MY_NAME}"
     ports:
       - "8022:22"
     networks:
       - developer
     privileged: true 
+    restart: always
 
 networks:
   developer:

@@ -8,5 +8,5 @@ else
   echo "executing shell command in thyp-sdk: $@"
 fi
 echo ""
-ssh -X -p 8022 ${USERNAME}@127.0.0.1 $@
+ssh -X -p 8022 ${MY_NAME}@127.0.0.1 $@
 
