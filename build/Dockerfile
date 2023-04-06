@@ -25,7 +25,10 @@ RUN dpkg --add-architecture i386
 RUN add-apt-repository universe
 RUN apt-get update --fix-missing
 
-RUN apt-get install -y rpm2cpio libncurses5 libncurses5:i386 libstdc++6:i386
+RUN apt-get install -y rpm2cpio libncurses5 libncurses5:i386 libstdc++6:i386 \
+            libncursesw5
+
+RUN apt-get install -y ninja-build libpixman-1-dev libfdt-dev libslirp-dev
 
 RUN apt-get install -y texinfo libglib2.0-dev liblz4-tool autoconf \
             libtool libsdl-dev build-essential golang git \
