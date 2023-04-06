@@ -22,7 +22,7 @@ $ docker-compose up -d
 
 ```
 ### Load prebuilt docker image to system
-$ docker load -i thyp-docker-focal-0.1.tar.gz
+$ docker load -i thyp-docker-focal-<version>.tar.gz
 
 ### Creating new container
 $ docker-compose up -d
