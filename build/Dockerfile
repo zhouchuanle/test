@@ -55,6 +55,8 @@ RUN apt-get install -y adwaita-icon-theme-full
 RUN apt-get install -y inetutils-ping inetutils-traceroute dnsutils \
             inetutils-tools autossh
 
+RUN apt-get install -y zstd qtchooser
+
 RUN add-apt-repository ppa:git-core/ppa
 RUN apt-get update
 RUN apt-get install -y git
