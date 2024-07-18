@@ -1,0 +1,22 @@
+version: '3'
+services:
+  thyp-sdk:
+    build:
+      context: ./build
+      args:
+        username: ${MY_NAME}
+        password: ${MY_PWD}
+        timezone: ${MY_TIMEZONE}
+    image: goldenriver/thyp-sdk:${MY_IMAGE_VERSION}
+    volumes:
+      - "./user_home:/home/${MY_NAME}"
+    ports:
+      - "8022:22"
+    networks:
+      - developer
+    privileged: true 
+    restart: always
+
+networks:
+  developer:
+
